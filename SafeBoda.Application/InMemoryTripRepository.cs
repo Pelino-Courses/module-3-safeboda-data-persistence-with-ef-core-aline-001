@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using SafeBoda.Core;
 namespace SafeBoda.Application
 {
     public class InMemoryTripRepository : ITripRepository
     {
+        private readonly ArrayList _trips = new ArrayList();
         public IEnumerable GetActiveTrips()
         {
             return new ArrayList
@@ -21,6 +23,15 @@ namespace SafeBoda.Application
                     RequestTime = DateTime.Now
                 }
             };
+        }
+        public Trip CreateTrip(Trip trip)
+        {
+            if (trip.Id == Guid.Empty)
+                trip.Id = Guid.NewGuid();
+
+            trip.RequestTime = DateTime.Now;
+            _trips.Add(trip);
+            return trip;
         }
     }
 }
