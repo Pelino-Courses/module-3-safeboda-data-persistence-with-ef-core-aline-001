@@ -8,15 +8,18 @@ namespace SafeBoda.Application
         {
             return new ArrayList
             {
-                new Trip(
-                    Guid.NewGuid(),
-                    Guid.NewGuid(),
-                    Guid.NewGuid(),
-                    new Location(-1.9501, 30.0589),
-                    new Location(-1.9441, 30.0619),
-                    1000m,
-                    DateTime.Now
-                )
+                new Trip
+                {
+                    Id = Guid.NewGuid(),
+                    RiderId = Guid.NewGuid(),
+                    DriverId = Guid.NewGuid(),
+                    StartLatitude = -1.9501,
+                    StartLongitude = 30.0589,
+                    EndLatitude = -1.9441,
+                    EndLongitude = 30.0619,
+                    Fare = 1000m,
+                    RequestTime = DateTime.Now
+                }
             };
         }
     }

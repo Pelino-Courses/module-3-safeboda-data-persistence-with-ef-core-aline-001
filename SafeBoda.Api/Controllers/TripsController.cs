@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// TripsController.cs
+using Microsoft.AspNetCore.Mvc;
 using SafeBoda.Application;
 using SafeBoda.Core;
 
@@ -26,15 +27,18 @@ namespace SafeBoda.Api.Controllers
         [HttpPost("request")]
         public IActionResult RequestTrip([FromBody] TripRequest request)
         {
-            var newTrip = new Trip(
-                Guid.NewGuid(),
-                request.RiderId,
-                Guid.NewGuid(), 
-                request.Start,
-                request.End,
-                1000m,
-                DateTime.Now
-            );
+            var newTrip = new Trip
+            {
+                Id = Guid.NewGuid(),
+                RiderId = request.RiderId,
+                DriverId = Guid.NewGuid(),
+                StartLatitude = request.Start.Latitude,
+                StartLongitude = request.Start.Longitude,
+                EndLatitude = request.End.Latitude,
+                EndLongitude = request.End.Longitude,
+                Fare = 1000m,
+                RequestTime = DateTime.Now
+            };
             return Ok(newTrip);
         }
     }

@@ -1,7 +1,6 @@
 using SafeBoda.Application;
 using SafeBoda.Core;
 using Microsoft.EntityFrameworkCore;
-using SafeBoda.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
