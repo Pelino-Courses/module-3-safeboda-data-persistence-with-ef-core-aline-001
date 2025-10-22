@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SafeBoda.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a6c97a486893da8b85eec48e42981c91a43dd3d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c99e8ebb4747a82cdd038f7cf20f2341daf0037")]
 [assembly: System.Reflection.AssemblyProductAttribute("SafeBoda.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SafeBoda.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
