@@ -12,19 +12,29 @@ namespace SafeBoda.Infrastructure
         {
             _db = db;
         }
-
         public IEnumerable GetActiveTrips()
         {
             return _db.Trips.ToList();
         }
-
         public Trip CreateTrip(Trip trip)
         {
-            if (trip.Id == Guid.Empty) trip.Id = Guid.NewGuid();
+            if (trip.Id == Guid.Empty)
+                trip.Id = Guid.NewGuid();
+
             trip.RequestTime = DateTime.UtcNow;
             _db.Trips.Add(trip);
-            _db.SaveChanges();
+            _db.SaveChanges(); 
             return trip;
+        }
+        
+        public bool DeleteTrip(Guid tripId)
+        {
+            var trip = _db.Trips.Find(tripId);
+            if (trip == null) return false;
+
+            _db.Trips.Remove(trip);
+            _db.SaveChanges();
+            return true;
         }
     }
 }

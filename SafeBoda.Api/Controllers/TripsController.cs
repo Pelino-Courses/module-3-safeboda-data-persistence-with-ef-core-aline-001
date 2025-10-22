@@ -1,5 +1,4 @@
-﻿// TripsController.cs
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SafeBoda.Application;
 using SafeBoda.Core;
 
@@ -10,20 +9,18 @@ namespace SafeBoda.Api.Controllers
     public class TripsController : ControllerBase
     {
         private readonly ITripRepository _tripRepository;
+
         public TripsController(ITripRepository tripRepository)
         {
             _tripRepository = tripRepository;
         }
 
-        // GET 
         [HttpGet]
         public IActionResult GetAllTrips()
         {
             var trips = _tripRepository.GetActiveTrips();
             return Ok(trips);
         }
-
-        // POST 
         [HttpPost("request")]
         public IActionResult RequestTrip([FromBody] TripRequest request)
         {
@@ -39,9 +36,22 @@ namespace SafeBoda.Api.Controllers
                 Fare = 1000m,
                 RequestTime = DateTime.Now
             };
-            return Ok(newTrip);
-        }
-    }
 
+            var createdTrip = _tripRepository.CreateTrip(newTrip);
+            
+            return CreatedAtAction(nameof(GetAllTrips), new { id = createdTrip.Id }, createdTrip);
+        }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteTrip(Guid id)
+        {
+            var success = _tripRepository.DeleteTrip(id);
+            if (!success)
+                return NotFound();
+
+            return NoContent();
+        }
+
+    }
+    
     public record TripRequest(Guid RiderId, Location Start, Location End);
 }

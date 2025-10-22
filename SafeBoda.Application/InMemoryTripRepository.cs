@@ -33,5 +33,14 @@ namespace SafeBoda.Application
             _trips.Add(trip);
             return trip;
         }
+        
+        public bool DeleteTrip(Guid tripId)
+        {
+            var trip = _trips.Cast<Trip>().FirstOrDefault(t => t.Id == tripId);
+            if (trip == null) return false;
+
+            _trips.Remove(trip);
+            return true;
+        }
     }
 }

@@ -6,5 +6,6 @@ namespace SafeBoda.Application
     {
         public IEnumerable GetActiveTrips();
         Trip CreateTrip(Trip trip);
+        bool DeleteTrip(Guid tripId);
     }
 }
