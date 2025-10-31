@@ -12,7 +12,7 @@ using SafeBoda.Infrastructure;
 namespace SafeBoda.Infrastructure.Migrations
 {
     [DbContext(typeof(SafeBodaDbContext))]
-    [Migration("20251030225649_InitialCreate")]
+    [Migration("20251031060348_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
