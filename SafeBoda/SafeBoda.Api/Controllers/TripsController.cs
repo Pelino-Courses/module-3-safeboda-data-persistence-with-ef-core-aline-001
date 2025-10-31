@@ -21,14 +21,15 @@ namespace SafeBoda.Api.Controllers
             var trips = _tripRepository.GetActiveTrips();
             return Ok(trips);
         }
+
         [HttpPost("request")]
         public IActionResult RequestTrip([FromBody] TripRequest request)
         {
             var newTrip = new Trip
             {
-                Id = Guid.NewGuid(),
+                Id = 0, // repository will assign the ID
                 RiderId = request.RiderId,
-                DriverId = Guid.NewGuid(),
+                DriverId = request.DriverId,
                 StartLatitude = request.Start.Latitude,
                 StartLongitude = request.Start.Longitude,
                 EndLatitude = request.End.Latitude,
@@ -38,11 +39,12 @@ namespace SafeBoda.Api.Controllers
             };
 
             var createdTrip = _tripRepository.CreateTrip(newTrip);
-            
+
             return CreatedAtAction(nameof(GetAllTrips), new { id = createdTrip.Id }, createdTrip);
         }
+
         [HttpDelete("{id}")]
-        public IActionResult DeleteTrip(Guid id)
+        public IActionResult DeleteTrip(int id)
         {
             var success = _tripRepository.DeleteTrip(id);
             if (!success)
@@ -50,8 +52,7 @@ namespace SafeBoda.Api.Controllers
 
             return NoContent();
         }
-
     }
-    
-    public record TripRequest(Guid RiderId, Location Start, Location End);
+
+    public record TripRequest(int RiderId, int DriverId, Location Start, Location End);
 }

@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 using SafeBoda.Core;
+
 namespace SafeBoda.Application
 {
     public interface ITripRepository
     {
-        public IEnumerable GetActiveTrips();
+        IEnumerable<Trip> GetActiveTrips();
         Trip CreateTrip(Trip trip);
-        bool DeleteTrip(Guid tripId);
+        bool DeleteTrip(int tripId);
     }
 }

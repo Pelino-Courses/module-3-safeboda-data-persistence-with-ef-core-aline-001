@@ -1,6 +1,8 @@
 ﻿using SafeBoda.Application;
 using SafeBoda.Core;
-using System.Collections;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SafeBoda.Infrastructure
 {
@@ -12,22 +14,24 @@ namespace SafeBoda.Infrastructure
         {
             _db = db;
         }
-        public IEnumerable GetActiveTrips()
+
+        public IEnumerable<Trip> GetActiveTrips()
         {
-            return _db.Trips.ToList();
+            return _db.Trips
+                .Include(t => t.Rider)
+                .Include(t => t.Driver)
+                .ToList();
         }
+
         public Trip CreateTrip(Trip trip)
         {
-            if (trip.Id == Guid.Empty)
-                trip.Id = Guid.NewGuid();
-
             trip.RequestTime = DateTime.UtcNow;
             _db.Trips.Add(trip);
-            _db.SaveChanges(); 
+            _db.SaveChanges();
             return trip;
         }
-        
-        public bool DeleteTrip(Guid tripId)
+
+        public bool DeleteTrip(int tripId)
         {
             var trip = _db.Trips.Find(tripId);
             if (trip == null) return false;

@@ -5,14 +5,14 @@
 
     public class Rider
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; } = "";
         public string PhoneNumber{ get; set; }="";
     }
 
     public class Driver
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; } = "";
         public string PhoneNumber { get; set; } = "";
         public string MotoPlateNumber { get; set; } = "";
@@ -20,11 +20,11 @@
 
     public class Trip
     {
-        public Guid Id{ get; set; }
-        public Guid RiderId { get; set; }
+        public int Id{ get; set; }
+        public int RiderId { get; set; }
         public Rider? Rider { get; set; }
 
-        public Guid DriverId { get; set; }
+        public int DriverId { get; set; }
         public Driver? Driver { get; set; }
 
         public double StartLatitude { get; set; }

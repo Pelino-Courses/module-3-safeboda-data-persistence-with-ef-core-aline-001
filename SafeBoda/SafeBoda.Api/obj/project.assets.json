@@ -1599,8 +1599,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "9.0.10",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.10",
+          "Microsoft.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
           "SafeBoda.Application": "1.0.0",
           "SafeBoda.Core": "1.0.0"
         },
@@ -4507,38 +4507,45 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Api\\SafeBoda.Api.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\module-3\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Api\\SafeBoda.Api.csproj",
       "projectName": "SafeBoda.Api",
-      "projectPath": "C:\\Users\\user\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Api\\SafeBoda.Api.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\module-3\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Api\\SafeBoda.Api.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Api\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\module-3\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Api\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\user\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Application\\SafeBoda.Application.csproj": {
-              "projectPath": "C:\\Users\\user\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Application\\SafeBoda.Application.csproj"
+            "C:\\Users\\user\\Desktop\\module-3\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Application\\SafeBoda.Application.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\module-3\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Application\\SafeBoda.Application.csproj"
             },
-            "C:\\Users\\user\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Core\\SafeBoda.Core.csproj": {
-              "projectPath": "C:\\Users\\user\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Core\\SafeBoda.Core.csproj"
+            "C:\\Users\\user\\Desktop\\module-3\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Core\\SafeBoda.Core.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\module-3\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Core\\SafeBoda.Core.csproj"
             },
-            "C:\\Users\\user\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Infrastructure\\SafeBoda.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\user\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Infrastructure\\SafeBoda.Infrastructure.csproj"
+            "C:\\Users\\user\\Desktop\\module-3\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Infrastructure\\SafeBoda.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\module-3\\module-3-safeboda-data-persistence-with-ef-core-aline-001\\SafeBoda\\SafeBoda.Infrastructure\\SafeBoda.Infrastructure.csproj"
             }
           }
         }
@@ -4552,7 +4559,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -4600,28 +4608,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore from 9.0.10 to 8.0.0. Reference the package directly from the project to select a different version. \r\n SafeBoda.Api -> SafeBoda.Infrastructure -> Microsoft.EntityFrameworkCore (>= 9.0.10) \r\n SafeBoda.Api -> Microsoft.EntityFrameworkCore (>= 8.0.0)",
-      "libraryId": "Microsoft.EntityFrameworkCore",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 9.0.10 to 8.0.0. Reference the package directly from the project to select a different version. \r\n SafeBoda.Api -> SafeBoda.Infrastructure -> Microsoft.EntityFrameworkCore.SqlServer (>= 9.0.10) \r\n SafeBoda.Api -> Microsoft.EntityFrameworkCore.SqlServer (>= 8.0.0)",
-      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

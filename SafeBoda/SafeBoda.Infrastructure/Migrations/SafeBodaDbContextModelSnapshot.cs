@@ -24,9 +24,11 @@ namespace SafeBoda.Infrastructure.Migrations
 
             modelBuilder.Entity("SafeBoda.Core.Driver", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("MotoPlateNumber")
                         .IsRequired()
@@ -47,9 +49,11 @@ namespace SafeBoda.Infrastructure.Migrations
 
             modelBuilder.Entity("SafeBoda.Core.Rider", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -66,12 +70,14 @@ namespace SafeBoda.Infrastructure.Migrations
 
             modelBuilder.Entity("SafeBoda.Core.Trip", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("DriverId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("DriverId")
+                        .HasColumnType("int");
 
                     b.Property<double>("EndLatitude")
                         .HasColumnType("float");
@@ -85,8 +91,8 @@ namespace SafeBoda.Infrastructure.Migrations
                     b.Property<DateTime>("RequestTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("RiderId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("RiderId")
+                        .HasColumnType("int");
 
                     b.Property<double>("StartLatitude")
                         .HasColumnType("float");
