@@ -43,6 +43,25 @@ namespace SafeBoda.Api.Controllers
             return CreatedAtAction(nameof(GetAllTrips), new { id = createdTrip.Id }, createdTrip);
         }
 
+        [HttpPut("{id}")]
+        public IActionResult UpdateTrip(int id, [FromBody] Trip updatedTrip)
+        {
+            var existingTrip = _tripRepository.GetTripById(id);
+            if (existingTrip == null)
+                return NotFound();
+
+            existingTrip.RiderId = updatedTrip.RiderId;
+            existingTrip.DriverId = updatedTrip.DriverId;
+            existingTrip.StartLatitude = updatedTrip.StartLatitude;
+            existingTrip.StartLongitude = updatedTrip.StartLongitude;
+            existingTrip.EndLatitude = updatedTrip.EndLatitude;
+            existingTrip.EndLongitude = updatedTrip.EndLongitude;
+            existingTrip.Fare = updatedTrip.Fare;
+
+            _tripRepository.UpdateTrip(existingTrip);
+            return NoContent();
+        }
+
         [HttpDelete("{id}")]
         public IActionResult DeleteTrip(int id)
         {

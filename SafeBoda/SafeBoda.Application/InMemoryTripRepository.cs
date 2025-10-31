@@ -38,6 +38,28 @@ namespace SafeBoda.Application
             return trip;
         }
 
+        public Trip? GetTripById(int id)
+        {
+            return _trips.FirstOrDefault(t => t.Id == id);
+        }
+
+        public Trip UpdateTrip(Trip trip)
+        {
+            var existingTrip = _trips.FirstOrDefault(t => t.Id == trip.Id);
+            if (existingTrip != null)
+            {
+                existingTrip.RiderId = trip.RiderId;
+                existingTrip.DriverId = trip.DriverId;
+                existingTrip.StartLatitude = trip.StartLatitude;
+                existingTrip.StartLongitude = trip.StartLongitude;
+                existingTrip.EndLatitude = trip.EndLatitude;
+                existingTrip.EndLongitude = trip.EndLongitude;
+                existingTrip.Fare = trip.Fare;
+                existingTrip.RequestTime = trip.RequestTime;
+            }
+            return trip;
+        }
+
         public bool DeleteTrip(int tripId)
         {
             var trip = _trips.FirstOrDefault(t => t.Id == tripId);

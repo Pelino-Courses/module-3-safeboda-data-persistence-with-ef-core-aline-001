@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SafeBoda.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac03203f7f20bac05613327faa8be81f1b9fa774")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6898a0ede77babf1049698c527331f0ccd31ef6d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SafeBoda.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SafeBoda.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

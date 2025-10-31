@@ -8,5 +8,8 @@ namespace SafeBoda.Application
         IEnumerable<Trip> GetActiveTrips();
         Trip CreateTrip(Trip trip);
         bool DeleteTrip(int tripId);
+        Trip? GetTripById(int id);
+        Trip UpdateTrip(Trip trip);
+
     }
 }

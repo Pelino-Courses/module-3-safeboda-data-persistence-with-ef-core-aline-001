@@ -40,5 +40,20 @@ namespace SafeBoda.Infrastructure
             _db.SaveChanges();
             return true;
         }
+
+        public Trip? GetTripById(int id)
+        {
+            return _db.Trips
+                .Include(t => t.Rider)
+                .Include(t => t.Driver)
+                .FirstOrDefault(t => t.Id == id);
+        }
+
+        public Trip UpdateTrip(Trip trip)
+        {
+            _db.Trips.Update(trip);
+            _db.SaveChanges();
+            return trip;
+        }
     }
 }
